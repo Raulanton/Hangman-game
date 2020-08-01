@@ -11,7 +11,7 @@ word = random.choice(file.readlines())
 # Underlines per letter
 count = 0
 underlines = []
-for x in word:
+while count < len(word)-1:
     count = count + 1
     underlines.append("_")
 print("The word I am thinking of has", count, "letters")
@@ -51,6 +51,9 @@ while fails <6:
                 goodguess = 1
             possitionletter = possitionletter + 1
         guessletters.append(letter)
+        if "_" not in underlines:
+            print("Correct", name, "the word was", word)
+            break
 
     if goodguess == 0:
         guesses = guesses + 1
